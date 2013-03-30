@@ -1,0 +1,209 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'coffeeify' ]
+2 info using npm@1.1.50
+3 info using node@v0.8.4
+4 verbose node symlink /usr/local/bin/node
+5 verbose read json /Users/latentflip/Projects/JS/angularfire/package.json
+6 verbose read json /Users/latentflip/Projects/JS/angularfire/package.json
+7 verbose cache add [ 'coffeeify', null ]
+8 silly cache add name=undefined spec="coffeeify" args=["coffeeify",null]
+9 verbose parsed url { pathname: 'coffeeify', path: 'coffeeify', href: 'coffeeify' }
+10 silly lockFile 9ff2f462-coffeeify coffeeify
+11 verbose lock coffeeify /Users/latentflip/.npm/9ff2f462-coffeeify.lock
+12 silly lockFile 9ff2f462-coffeeify coffeeify
+13 verbose addNamed [ 'coffeeify', '' ]
+14 verbose addNamed [ null, '' ]
+15 silly lockFile c14c8507-coffeeify coffeeify@
+16 verbose lock coffeeify@ /Users/latentflip/.npm/c14c8507-coffeeify.lock
+17 silly addNameRange { name: 'coffeeify', range: '', hasData: false }
+18 verbose registry.get coffeeify not expired, no request
+19 silly addNameRange number 2 { name: 'coffeeify', range: '', hasData: true }
+20 silly addNameRange versions [ 'coffeeify', [ '0.0.0', '0.1.0', '0.2.0', '0.3.0' ] ]
+21 verbose addNamed [ 'coffeeify', '0.3.0' ]
+22 verbose addNamed [ '0.3.0', '0.3.0' ]
+23 silly lockFile aba4c304-coffeeify-0-3-0 coffeeify@0.3.0
+24 verbose lock coffeeify@0.3.0 /Users/latentflip/.npm/aba4c304-coffeeify-0-3-0.lock
+25 verbose read json /Users/latentflip/.npm/coffeeify/0.3.0/package/package.json
+26 silly lockFile aba4c304-coffeeify-0-3-0 coffeeify@0.3.0
+27 silly lockFile c14c8507-coffeeify coffeeify@
+28 silly resolved [ { name: 'coffeeify',
+28 silly resolved     version: '0.3.0',
+28 silly resolved     description: 'browserify v2 plugin for coffee-script with support for mixed .js and .coffee files',
+28 silly resolved     main: 'index.js',
+28 silly resolved     dependencies:
+28 silly resolved      { 'coffee-script': '~1.6.2',
+28 silly resolved        through: '~2.2.0',
+28 silly resolved        'convert-source-map': '~0.2.1' },
+28 silly resolved     devDependencies: { tap: '~0.4.0', browserify: '~2.4.0' },
+28 silly resolved     scripts: { test: 'tap test/*.js' },
+28 silly resolved     repository: { type: 'git', url: 'git://github.com/substack/coffeeify.git' },
+28 silly resolved     homepage: 'https://github.com/substack/coffeeify',
+28 silly resolved     keywords: [ 'coffee-script', 'browserify', 'v2', 'js', 'plugin', 'transform' ],
+28 silly resolved     author:
+28 silly resolved      { name: 'James Halliday',
+28 silly resolved        email: 'mail@substack.net',
+28 silly resolved        url: 'http://substack.net' },
+28 silly resolved     license: 'MIT',
+28 silly resolved     readme: '# coffeeify\n\nbrowserify v2 plugin for coffee-script\n\nmix and match `.coffee` and `.js` files in the same project\n\n**important: when using require(\'path/to/file.coffee\') remember to use .coffee extension**\n\n[![build status](https://secure.travis-ci.org/substack/coffeeify.png)](http://travis-ci.org/substack/coffeeify)\n\n# example\n\ngiven some files written in a mix of `js` and `coffee`:\n\nfoo.coffee:\n\n``` coffee\nconsole.log(require \'./bar.js\')\n```\n\nbar.js:\n\n``` js\nmodule.exports = require(\'./baz.coffee\')(5)\n```\n\nbaz.coffee:\n\n``` js\nmodule.exports = (n) -> n * 111\n```\n\ninstall coffeeify into your app:\n\n```\n$ npm install coffeeify\n```\n\nwhen you compile your app, just pass `-t coffeeify` to browserify:\n\n```\n$ browserify -t coffeeify foo.coffee > bundle.js\n$ node bundle.js\n555\n```\n\n# install\n\nWith [npm](https://npmjs.org) do:\n\n```\nnpm install coffeeify\n```\n\n# license\n\nMIT\n\n# maintainers wanted\n\nI am not a coffee-script user so if you use this plugin regularly and want to\ntake it over I will gladly add you as a maintainer on npm.\n',
+28 silly resolved     _id: 'coffeeify@0.3.0',
+28 silly resolved     _from: 'coffeeify' } ]
+29 info install coffeeify@0.3.0 into /Users/latentflip/Projects/JS/angularfire
+30 info installOne coffeeify@0.3.0
+31 verbose from cache /Users/latentflip/.npm/coffeeify/0.3.0/package/package.json
+32 info /Users/latentflip/Projects/JS/angularfire/node_modules/coffeeify unbuild
+33 verbose read json /Users/latentflip/Projects/JS/angularfire/node_modules/coffeeify/package.json
+34 verbose tar unpack /Users/latentflip/.npm/coffeeify/0.3.0/package.tgz
+35 silly lockFile f69dc093-gularfire-node-modules-coffeeify /Users/latentflip/Projects/JS/angularfire/node_modules/coffeeify
+36 verbose lock /Users/latentflip/Projects/JS/angularfire/node_modules/coffeeify /Users/latentflip/.npm/f69dc093-gularfire-node-modules-coffeeify.lock
+37 silly gunzTarPerm modes [ '777', '666' ]
+38 silly gunzTarPerm extractEntry package.json
+39 silly gunzTarPerm extractEntry LICENSE
+40 silly gunzTarPerm extractEntry index.js
+41 silly gunzTarPerm extractEntry .travis.yml
+42 silly gunzTarPerm extractEntry example/bar.js
+43 silly gunzTarPerm extractEntry example/baz.coffee
+44 silly gunzTarPerm extractEntry example/foo.coffee
+45 silly gunzTarPerm extractEntry readme.markdown
+46 silly gunzTarPerm extractEntry test/bundle.js
+47 silly gunzTarPerm extractEntry test/transform.js
+48 verbose read json /Users/latentflip/Projects/JS/angularfire/node_modules/coffeeify/package.json
+49 silly lockFile f69dc093-gularfire-node-modules-coffeeify /Users/latentflip/Projects/JS/angularfire/node_modules/coffeeify
+50 info preinstall coffeeify@0.3.0
+51 verbose from cache /Users/latentflip/Projects/JS/angularfire/node_modules/coffeeify/package.json
+52 verbose readDependencies using package.json deps
+53 verbose from cache /Users/latentflip/Projects/JS/angularfire/node_modules/coffeeify/package.json
+54 verbose readDependencies using package.json deps
+55 verbose cache add [ 'coffee-script@~1.6.2', null ]
+56 silly cache add name=undefined spec="coffee-script@~1.6.2" args=["coffee-script@~1.6.2",null]
+57 verbose parsed url { pathname: 'coffee-script@~1.6.2',
+57 verbose parsed url   path: 'coffee-script@~1.6.2',
+57 verbose parsed url   href: 'coffee-script@~1.6.2' }
+58 silly cache add name="coffee-script" spec="~1.6.2" args=["coffee-script","~1.6.2"]
+59 verbose parsed url { pathname: '~1.6.2', path: '~1.6.2', href: '~1.6.2' }
+60 verbose addNamed [ 'coffee-script', '~1.6.2' ]
+61 verbose addNamed [ null, '>=1.6.2- <1.7.0-' ]
+62 silly lockFile 93470bfc-coffee-script-1-6-2 coffee-script@~1.6.2
+63 verbose lock coffee-script@~1.6.2 /Users/latentflip/.npm/93470bfc-coffee-script-1-6-2.lock
+64 verbose cache add [ 'through@~2.2.0', null ]
+65 silly cache add name=undefined spec="through@~2.2.0" args=["through@~2.2.0",null]
+66 verbose parsed url { pathname: 'through@~2.2.0',
+66 verbose parsed url   path: 'through@~2.2.0',
+66 verbose parsed url   href: 'through@~2.2.0' }
+67 silly cache add name="through" spec="~2.2.0" args=["through","~2.2.0"]
+68 verbose parsed url { pathname: '~2.2.0', path: '~2.2.0', href: '~2.2.0' }
+69 verbose addNamed [ 'through', '~2.2.0' ]
+70 verbose addNamed [ null, '>=2.2.0- <2.3.0-' ]
+71 silly lockFile 7ada9cfd-through-2-2-0 through@~2.2.0
+72 verbose lock through@~2.2.0 /Users/latentflip/.npm/7ada9cfd-through-2-2-0.lock
+73 silly addNameRange { name: 'coffee-script',
+73 silly addNameRange   range: '>=1.6.2- <1.7.0-',
+73 silly addNameRange   hasData: false }
+74 silly addNameRange { name: 'through', range: '>=2.2.0- <2.3.0-', hasData: false }
+75 verbose cache add [ 'convert-source-map@~0.2.1', null ]
+76 silly cache add name=undefined spec="convert-source-map@~0.2.1" args=["convert-source-map@~0.2.1",null]
+77 verbose parsed url { pathname: 'convert-source-map@~0.2.1',
+77 verbose parsed url   path: 'convert-source-map@~0.2.1',
+77 verbose parsed url   href: 'convert-source-map@~0.2.1' }
+78 silly cache add name="convert-source-map" spec="~0.2.1" args=["convert-source-map","~0.2.1"]
+79 verbose parsed url { pathname: '~0.2.1', path: '~0.2.1', href: '~0.2.1' }
+80 verbose addNamed [ 'convert-source-map', '~0.2.1' ]
+81 verbose addNamed [ null, '>=0.2.1- <0.3.0-' ]
+82 silly lockFile 55410568-convert-source-map-0-2-1 convert-source-map@~0.2.1
+83 verbose lock convert-source-map@~0.2.1 /Users/latentflip/.npm/55410568-convert-source-map-0-2-1.lock
+84 silly addNameRange { name: 'convert-source-map',
+84 silly addNameRange   range: '>=0.2.1- <0.3.0-',
+84 silly addNameRange   hasData: false }
+85 verbose registry.get coffee-script not expired, no request
+86 silly addNameRange number 2 { name: 'coffee-script',
+86 silly addNameRange   range: '>=1.6.2- <1.7.0-',
+86 silly addNameRange   hasData: true }
+87 silly addNameRange versions [ 'coffee-script',
+87 silly addNameRange   [ '0.7.0',
+87 silly addNameRange     '0.7.1',
+87 silly addNameRange     '0.7.2',
+87 silly addNameRange     '0.9.0',
+87 silly addNameRange     '0.9.1',
+87 silly addNameRange     '0.9.2',
+87 silly addNameRange     '0.9.3',
+87 silly addNameRange     '0.9.4',
+87 silly addNameRange     '0.9.5',
+87 silly addNameRange     '0.9.6',
+87 silly addNameRange     '1.0.0',
+87 silly addNameRange     '1.0.1',
+87 silly addNameRange     '1.1.0',
+87 silly addNameRange     '1.1.1',
+87 silly addNameRange     '1.1.2',
+87 silly addNameRange     '1.1.3',
+87 silly addNameRange     '1.2.0',
+87 silly addNameRange     '1.3.0',
+87 silly addNameRange     '1.3.1',
+87 silly addNameRange     '1.3.2',
+87 silly addNameRange     '1.3.3',
+87 silly addNameRange     '1.4.0',
+87 silly addNameRange     '1.5.0' ] ]
+88 silly lockFile 93470bfc-coffee-script-1-6-2 coffee-script@~1.6.2
+89 verbose about to build /Users/latentflip/Projects/JS/angularfire/node_modules/coffeeify
+90 info /Users/latentflip/Projects/JS/angularfire/node_modules/coffeeify unbuild
+91 verbose from cache /Users/latentflip/Projects/JS/angularfire/node_modules/coffeeify/package.json
+92 info preuninstall coffeeify@0.3.0
+93 verbose registry.get through not expired, no request
+94 silly addNameRange number 2 { name: 'through', range: '>=2.2.0- <2.3.0-', hasData: true }
+95 silly addNameRange versions [ 'through',
+95 silly addNameRange   [ '0.0.1',
+95 silly addNameRange     '0.0.2',
+95 silly addNameRange     '0.0.3',
+95 silly addNameRange     '0.0.4',
+95 silly addNameRange     '0.1.0',
+95 silly addNameRange     '0.1.1',
+95 silly addNameRange     '0.1.2',
+95 silly addNameRange     '0.1.3',
+95 silly addNameRange     '0.1.4',
+95 silly addNameRange     '1.0.0',
+95 silly addNameRange     '1.1.0',
+95 silly addNameRange     '1.1.1',
+95 silly addNameRange     '1.1.2',
+95 silly addNameRange     '2.0.0',
+95 silly addNameRange     '2.1.0',
+95 silly addNameRange     '2.2.0' ] ]
+96 verbose addNamed [ 'through', '2.2.0' ]
+97 verbose addNamed [ '2.2.0', '2.2.0' ]
+98 silly lockFile 1410d30a-through-2-2-0 through@2.2.0
+99 verbose lock through@2.2.0 /Users/latentflip/.npm/1410d30a-through-2-2-0.lock
+100 info uninstall coffeeify@0.3.0
+101 verbose registry.get convert-source-map not expired, no request
+102 silly addNameRange number 2 { name: 'convert-source-map',
+102 silly addNameRange   range: '>=0.2.1- <0.3.0-',
+102 silly addNameRange   hasData: true }
+103 silly addNameRange versions [ 'convert-source-map',
+103 silly addNameRange   [ '0.1.0', '0.2.0', '0.2.1', '0.2.2', '0.2.3', '0.2.4', '0.2.5' ] ]
+104 verbose addNamed [ 'convert-source-map', '0.2.5' ]
+105 verbose addNamed [ '0.2.5', '0.2.5' ]
+106 silly lockFile a901d75a-convert-source-map-0-2-5 convert-source-map@0.2.5
+107 verbose lock convert-source-map@0.2.5 /Users/latentflip/.npm/a901d75a-convert-source-map-0-2-5.lock
+108 verbose read json /Users/latentflip/.npm/through/2.2.0/package/package.json
+109 verbose true,/Users/latentflip/Projects/JS/angularfire/node_modules,/Users/latentflip/Projects/JS/angularfire/node_modules unbuild coffeeify@0.3.0
+110 info postuninstall coffeeify@0.3.0
+111 verbose read json /Users/latentflip/.npm/convert-source-map/0.2.5/package/package.json
+112 silly lockFile 1410d30a-through-2-2-0 through@2.2.0
+113 silly lockFile a901d75a-convert-source-map-0-2-5 convert-source-map@0.2.5
+114 error Error: No compatible version found: coffee-script@'>=1.6.2- <1.7.0-'
+114 error Valid install targets:
+114 error ["0.7.0","0.7.1","0.7.2","0.9.0","0.9.1","0.9.2","0.9.3","0.9.4","0.9.5","0.9.6","1.0.0","1.0.1","1.1.0","1.1.1","1.1.2","1.1.3","1.2.0","1.3.0","1.3.1","1.3.2","1.3.3","1.4.0","1.5.0"]
+114 error     at installTargetsError (/usr/local/lib/node_modules/npm/lib/cache.js:553:10)
+114 error     at next (/usr/local/lib/node_modules/npm/lib/cache.js:532:17)
+114 error     at /usr/local/lib/node_modules/npm/lib/cache.js:512:5
+114 error     at RegClient.get_ (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/get.js:101:14)
+114 error     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/get.js:37:12)
+114 error     at fs.readFile (fs.js:176:14)
+114 error     at fs.close (/usr/local/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:92:5)
+114 error     at Object.oncomplete (fs.js:297:15)
+115 error If you need help, you may report this log at:
+115 error     <http://github.com/isaacs/npm/issues>
+115 error or email it to:
+115 error     <npm-@googlegroups.com>
+116 error System Darwin 12.1.0
+117 error command "node" "/usr/local/bin/npm" "install" "coffeeify"
+118 error cwd /Users/latentflip/Projects/JS/angularfire
+119 error node -v v0.8.4
+120 error npm -v 1.1.50
+121 verbose exit [ 1, true ]
