@@ -1,5 +1,6 @@
 <html>
   <head>
+    <link href='../common/style.css' type='text/css' rel='stylesheet'>
     <script src='jquery.min.js'></script>
     <script src="https://cdn.firebase.com/v0/firebase.js"></script>
     <script src='angular.min.js'></script>
@@ -8,10 +9,13 @@
   </head>
   <body ng-app='myapp'>
     <div ng-controller='MyCtrl'>
-      <svg height=200>
+      <svg height=500>
       <circle ng-repeat="shape in shapes" svg-cx='{{shape.x}}' svg-cy='{{shape.y}}' svg-r='{{ shape.size }}' draggable shape='shape'>
       </svg>
-      <button ng-click='addShape()'>Add shape</button>
+      <button ng-click='addShape()'>Add a circle</button>
+      <p>
+        Click and drag to move, hold cmd/ctrl to resize, (view in multiple browsers for magic)
+      </p>
     </div>
   </body>
 </html>
