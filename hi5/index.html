@@ -1,0 +1,133 @@
+<script src="jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+<link href="bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+<style>
+  #hi5 {
+    width: 62px;
+    margin: 50px auto;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  #hi5-circle {
+    height: 50px;
+    width: 50px;
+    padding: 3px;
+    border: 3px black solid;
+    border-radius: 100px;
+  }
+  #hi5-wrapper {
+    position: relative;
+  }
+  #hi5-cursor {
+    position: absolute;
+    display: none;
+    height: 35px;
+    margin-left: -17.5px;
+    margin-top: -17.5px;
+  }
+  #hi5-plusone {
+    line-height: 50px;
+    font-size: 20px;
+    position: absolute;
+    width: 50px;
+    text-align: center;
+    color: white;
+    display: none;
+  }
+  #hi5-count {
+    margin-top: 2px;
+  }
+</style>
+
+<div id="hi5">
+  <div id="hi5-circle">
+    <div id='hi5-wrapper'>
+      <div id='hi5-plusone'>+1</div>
+      <img src="hand.png" id='hi5-hand'>
+    </div>
+  </div>
+  <audio src="slap.mp3" id='hi5-sound'></audio>
+  <img src="handcursorbig.png" id='hi5-cursor'>
+  <p id='hi5-count'><span class='count'>10</span> ^5s</p>
+</div>
+
+
+<script>
+  $(function() {
+    var $cursor = $('#hi5-cursor');
+
+    $('#hi5-circle').popover({
+      html: true,
+      title: "Thanks!",
+      content: function() {
+        var url = encodeURIComponent(window.location.href);
+        var content = [
+        "Thoughts? Feedback? <a href='https://twitter.com/intent/tweet?related=philip_roberts&via=philip_roberts&url="+url+"'>Tweet Me</a>",
+        "Or feel free to <a href='mailto:phil@latentflip.com'>email me.</a>"
+        ]
+        return content.join("<br>")
+      }
+    });
+
+    var mousemove = function(ev) {
+      console.log('Mousemove');
+      $cursor.css({
+        left: ev.clientX,
+        top: ev.clientY
+      });
+    };
+    var playSound = function() {
+      $('#hi5-sound')[0].play();
+    };
+
+    var click = function() {
+      console.log('Click')
+      var to = { height: 50, marginLeft: -25, marginTop: -25, }
+      var from = { height: 35, marginLeft: -17.5, marginTop: -17.5 };
+      $cursor.animate(to, 50, function() {
+        playSound();
+        $('#hi5-count .count').text('11');
+        $(this).animate(from, 50, function() {
+
+          $('#hi5-hand').hide();
+          $('#hi5-circle').css({backgroundColor: '#D0002A', borderColor: 'white'});
+          $('#hi5-plusone').show();
+          hideCursor();
+          $('#hi5').popover('show')
+          twttr.widgets.load();
+        });
+      });
+    };
+
+    var showCursor = function() {
+      $('#hi5').css({cursor: 'none'});
+      $cursor.show();
+    };
+
+    var hideCursor = function() {
+      $('#hi5').css({cursor: 'auto'});
+      $cursor.hide();
+    }
+
+    var mouseleave = function() {
+      console.log('Mouseleave')
+      $(this).unbind('mouseleave', mouseleave);
+      $(this).unbind('mousemove', mousemove);
+      hideCursor();
+    };
+
+    var mouseenter = function() {
+      console.log('Mouseenter');
+      showCursor();
+
+      $('#hi5').bind('mousemove', mousemove);
+      $('#hi5').bind('click', click);
+      $('#hi5').bind('mouseleave', mouseleave);
+    }
+
+    $('#hi5').bind('mouseenter', mouseenter);
+  });
+</script>
