@@ -8,7 +8,6 @@
     width: 62px;
     margin: 50px auto;
     text-align: center;
-    font-weight: bold;
   }
 
   #hi5-circle {
@@ -36,9 +35,11 @@
     text-align: center;
     color: white;
     display: none;
+    font-weight: bold;
   }
   #hi5-count {
     margin-top: 2px;
+    font-weight: bold;
   }
 </style>
 
@@ -88,6 +89,12 @@
       var to = { height: 50, marginLeft: -25, marginTop: -25, }
       var from = { height: 35, marginLeft: -17.5, marginTop: -17.5 };
       $cursor.animate(to, 50, function() {
+        $('#hi5').unbind('mouseenter', mouseenter);
+        $('#hi5').unbind('mouseleave', mouseleave);
+        $('#hi5').unbind('mousemove', mousemove);
+        $('#hi5').unbind('click', click);
+
+
         playSound();
         $('#hi5-count .count').text('11');
         $(this).animate(from, 50, function() {
@@ -96,7 +103,7 @@
           $('#hi5-circle').css({backgroundColor: '#D0002A', borderColor: 'white'});
           $('#hi5-plusone').show();
           hideCursor();
-          $('#hi5').popover('show')
+          $('#hi5-circle').popover('show')
           twttr.widgets.load();
         });
       });
@@ -116,6 +123,7 @@
       console.log('Mouseleave')
       $(this).unbind('mouseleave', mouseleave);
       $(this).unbind('mousemove', mousemove);
+      $(this).unbind('click', click);
       hideCursor();
     };
 
