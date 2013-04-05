@@ -3,6 +3,24 @@
 <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
 <link href="bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
 
+<script src="http://hi5-server.herokuapp.com/socket.io/socket.io.js"></script>
+
+<script>
+  var socket = io.connect('http://hi5-server.herokuapp.com');
+  var id = "hi5-dev"
+
+  socket.emit('get_count', id)
+  socket.on('count:'+id, function(count) {
+    $('#hi5-count .count').text(count);
+    $('#hi5-count').show();
+  });
+
+  function hi5() {
+    socket.emit('hi5', id)
+  }
+</script>
+
+
 <style>
   #hi5 {
     width: 62px;
@@ -40,6 +58,7 @@
   #hi5-count {
     margin-top: 2px;
     font-weight: bold;
+    display: none;
   }
 </style>
 
@@ -52,7 +71,7 @@
   </div>
   <audio src="slap.mp3" id='hi5-sound'></audio>
   <img src="handcursorbig.png" id='hi5-cursor'>
-  <p id='hi5-count'><span class='count'>10</span> ^5s</p>
+  <p id='hi5-count'><span class='count'>_</span> ^5s</p>
 </div>
 
 
@@ -94,9 +113,8 @@
         $('#hi5').unbind('mousemove', mousemove);
         $('#hi5').unbind('click', click);
 
-
+        hi5();
         playSound();
-        $('#hi5-count .count').text('11');
         $(this).animate(from, 50, function() {
 
           $('#hi5-hand').hide();
